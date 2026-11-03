@@ -1,0 +1,27 @@
+
+# --- added at GitHub upload 2026-10-24: regenerable caches / files over GitHub's 100 MB limit ---
+node_modules/
+.next/
+venv/
+.venv/
+__pycache__/
+.gradle/
+.dart_tool/
+__MACOSX/
+.DS_Store
+.git-history-TOOLARGE/
+
+# secrets are never uploaded; copy them from a secure backup
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.local.example
+*.pem
+*.key
+credentials.json
+token*.json
+*.bak-before-local
+
+# credential files, removed from the repo on 2026-10-24; never commit
+app.zip

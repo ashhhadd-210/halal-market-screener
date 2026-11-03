@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 30% 7%;
+    --foreground: 210 22% 92%;
+
+    --card: 212 30% 10%;
+    --card-foreground: 210 22% 92%;
+
+    --popover: 212 28% 12%;
+    --popover-foreground: 210 22% 92%;
+
+    --primary: 170 72% 44%;
+    --primary-foreground: 210 30% 7%;
+
+    --secondary: 214 24% 15%;
+    --secondary-foreground: 210 18% 82%;
+
+    --muted: 214 20% 13%;
+    --muted-foreground: 213 12% 58%;
+
+    --accent: 196 62% 22%;
+    --accent-foreground: 191 90% 82%;
+
+    --destructive: 0 70% 56%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 18% 20%;
+    --input: 214 18% 20%;
+    --ring: 170 72% 44%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 213 31% 10%;
+    --sidebar-foreground: 210 22% 92%;
+    --sidebar-primary: 170 72% 44%;
+    --sidebar-primary-foreground: 210 30% 7%;
+    --sidebar-accent: 214 24% 15%;
+    --sidebar-accent-foreground: 210 18% 82%;
+    --sidebar-border: 214 18% 20%;
+    --sidebar-ring: 170 72% 44%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 30% 7%;
+
+    --success: 170 72% 44%;
+    --success-foreground: 210 30% 7%;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.16), transparent 28%),
+      radial-gradient(circle at top right, hsl(196 85% 45% / 0.14), transparent 24%),
+      radial-gradient(circle at 50% 20%, hsl(200 75% 38% / 0.08), transparent 32%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(213 28% 8%));
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    @apply font-semibold tracking-tight;
+  }
+
+  code, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .glass-panel {
+    background: linear-gradient(180deg, hsl(var(--card) / 0.94), hsl(212 30% 9% / 0.9));
+    box-shadow: 0 20px 60px hsl(210 40% 3% / 0.35);
+  }
+
+  .ambient-grid {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.18) 1px, transparent 1px);
+    background-size: 36px 36px;
+    background-position: center;
+  }
+}
